@@ -21,7 +21,7 @@
   "socket": true,
   "url": "https://github.com/AlexC999/alex-blind-rolls",
   "manifest": "https://raw.githubusercontent.com/AlexC999/alex-blind-rolls/master/module.json",
-  "download": "https://github.com/AlexC999/alex-blind-rolls/releases/download/v0.0.4/alex-blind-rolls.zip",
+  "download": "https://github.com/AlexC999/alex-blind-rolls/releases/download/initial/alex-blind-rolls.zip",
   "readme": "https://github.com//AlexC999/alex-blind-rolls/blob/master/README.md",
   "bugs": "https://github.com/AlexC999/alex-blind-rolls/issues"
 }
