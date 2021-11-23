@@ -18,8 +18,8 @@ export function getSkillModifierName() {
   if(game.settings.get("blind-roll-skills", "hideSurvival")){ skills.push("Skill Check: Survival");}
   if(game.settings.get("blind-roll-skills", "hideThievery")){ skills.push("Skill Check: Thievery");}
   if(game.settings.get("blind-roll-skills", "hideOccultism")){ skills.push("Skill Check: Occultism");}
-  if(game.settings.get("blind-roll-skills", "hideOccultism")){ skills.push("Skill Check: Occultism");}
-  if(game.settings.get("blind-roll-skills", "hideOccultism")){ skills.push("Skill Check: Occultism");}
+  //Perception
+  if(game.settings.get("blind-roll-skills", "hidePerception")){ skills.push("Perception Check");}
   // saving throws
   if(game.settings.get("blind-roll-skills", "hideSaves")){ skills.push("Saving Throw: Reflex");}
   if(game.settings.get("blind-roll-skills", "hideSaves")){ skills.push("Saving Throw: Will");}

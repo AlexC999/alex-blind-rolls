@@ -44,8 +44,15 @@ export const registerSettings = function() {
     default: false,
     type: Boolean
   });
+  game.settings.register("voidus-blind-roll-skills", "hidePerception", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHidePerception"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
 
-    game.settings.register("voidus-blind-roll-skills", "hideAcrobatics", {
+  game.settings.register("voidus-blind-roll-skills", "hideAcrobatics", {
     name: game.i18n.localize("BLINDROLLSKILLS.SettingHideAcrobatics"),
     scope: "world",
     config: true,

@@ -17,6 +17,8 @@
   "BLINDROLLSKILLS.SettingHideSurvival": "Hide Survival",
   "BLINDROLLSKILLS.SettingHideThievery": "Hide Thievery",
 
+  "BLINDROLLSKILLS.SettingHidePerception": "Hide Perception",
+
   "BLINDROLLSKILLS.SettingHideDeathSaves": "Hide Death Saving Throws",
   "BLINDROLLSKILLS.SettingHideDeathSavesHint": "This only hides the roll in the chat. Users will still see the number of successes and failures on the character sheet.",
 
