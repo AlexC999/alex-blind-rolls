@@ -1,0 +1,27 @@
+{
+  "name": "voidus-blind-roll-skills",
+  "title": "Voidus's Automatic Blind Rolls (2e)",
+  "description": "Allows the GM to force selected skill checks, initiative, saves, and attacks to roll blindly. Check package details for compatibility information.",
+  "version": "0.0.3-custom",
+  "author": "Voidus",
+  "minimumCoreVersion": "0.8.7",
+  "compatibleCoreVersion": "0.8.9",
+  "esmodules": ["scripts/autoblindrolls.js"],
+  "styles": ["styles/blindrolls.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "system": [],
+  "dependencies": [],
+  "socket": true,
+  "url": "testing",
+  "manifest": "testing",
+  "download": "testing",
+  "readme": "testing",
+  "bugs": "testing"
+}
