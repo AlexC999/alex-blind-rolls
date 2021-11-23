@@ -1,8 +1,8 @@
 {
-  "name": "voidus-blind-roll-skills",
+  "name": "blind-roll-skills",
   "title": "Voidus's Automatic Blind Rolls (2e)",
-  "description": "Allows the GM to force selected skill checks, initiative, saves, and attacks to roll blindly. Check package details for compatibility information.",
-  "version": "0.0.3-custom",
+  "description": "Allows the GM to force selected skill checks, initiative, saves, and attacks to roll blindly.",
+  "version": "0.1.0",
   "author": "AlexC999",
   "minimumCoreVersion": "0.8.7",
   "compatibleCoreVersion": "0.8.9",
@@ -21,7 +21,7 @@
   "socket": true,
   "url": "https://github.com/AlexC999/alex-blind-rolls",
   "manifest": "https://raw.githubusercontent.com/AlexC999/alex-blind-rolls/master/module.json",
-  "download": "https://github.com/AlexC999/alex-blind-rolls/releases/download/initial/alex-blind-rolls.zip",
+  "download": "https://github.com/AlexC999/alex-blind-rolls/releases/download/v0.1.0/alex-blind-rolls.zip",
   "readme": "https://github.com//AlexC999/alex-blind-rolls/blob/master/README.md",
   "bugs": "https://github.com/AlexC999/alex-blind-rolls/issues"
 }

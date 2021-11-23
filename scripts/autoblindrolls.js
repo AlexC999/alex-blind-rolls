@@ -33,11 +33,21 @@ Hooks.on("preCreateChatMessage", (msg, options, userId) => {
   let isInitiative = false;
   let isDeathSave = false;
   let isAttack = false;
+  let isSavingThrow = false;
 
   if (msg.data.flags) {
-    skillId = msg.data.flags.pf2e?.modifierName;
-    isInitiative = msg.data.flags.core?.initiativeRoll;
-    isDeathSave = msg.data.flags.pf2e?.context?.type === "death";
+    if(msg.data.flags.pf2e?.context?.type === "skill-check" ||msg.data.flags.pf2e?.context?.type === "perception-check") {
+      skillId = msg.data.flags.pf2e?.modifierName;
+      console.log("message skill id:")
+      console.log(skillId);
+    }
+
+    isInitiative = msg.data.flags.pf2e?.context?.type === "initiative";
+    isSavingThrow = msg.data.flags.pf2e?.context?.type === "saving-throw"
+    if (msg.data.flags.pf2e?.modifierName === "Flat Check") {
+      isDeathSave = msg.data.flags.pf2e?.context?.dc?.label.includes("Recovery Check versus a DC {dc} (dying ")
+    }
+    
     isAttack = msg.data.flags.pf2e?.context?.type === "attack-roll";
   }
 
@@ -50,7 +60,9 @@ Hooks.on("preCreateChatMessage", (msg, options, userId) => {
     makeRollBlind = AutoBlindRolls.makeInitiativeBlind();
   } else if (isDeathSave) {
     makeRollBlind = AutoBlindRolls.makeDeathSaveBlind();
-  } else if (isAttack) {
+  } else if (isSavingThrow) {
+    makeRollBlind = AutoBlindRolls.makeSaveBlind();
+  }else if (isAttack) {
     makeRollBlind = AutoBlindRolls.makeAttackBlind();
   }
 
@@ -73,7 +85,7 @@ Hooks.on("preCreateChatMessage", (msg, options, userId) => {
 function createAlertMsg() {
   if (game.settings.get("voidus-blind-roll-skills", "showHelpCards")) {
     renderTemplate(
-      "modules/voidus-blind-roll-skills/templates/helpCard.html",
+      "/templates/helpCard.html",
       {}
     ).then((html) => {
       let options = {
@@ -102,16 +114,12 @@ export function autoBlindRolls() {
     return skillsToBlind.includes(skill);
   }
 
-  // Hiding saves isn't a currently available feature; its existence here is purely so module authors
-  // who wish to support the feature when it does go live can implement it ahead of time.
-  // The bulk of what this method will do upon release is commented out here for your viewing pleasure.
-  function makeSaveBlind() {
-    // return game.settings.get("blind-roll-skills", "hideSaves");
-    return false;
-  }
-
   function makeDeathSaveBlind() {
     return game.settings.get("voidus-blind-roll-skills", "hideDeathSaves");
+  }
+
+  function makeSaveBlind() {
+    return game.settings.get("voidus-blind-roll-skills", "hideSaves");
   }
 
   function makeInitiativeBlind() {
